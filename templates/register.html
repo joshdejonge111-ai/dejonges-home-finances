@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | DeJonge Home Finances</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form method="POST" action="{{ url_for('register') }}">
+        <h2>Register</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+        <a href="{{ url_for('login') }}">Back to Login</a>
+    </form>
+</body>
+</html>
